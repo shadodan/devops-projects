@@ -1,0 +1,12 @@
+Log created: 2022-09-08T20:00:29.967107000Z
+Process ID:  95608 (0x17578)
+Parent PID:  1049 (0x419)
+Executable:  /usr/lib/virtualbox/VBoxHeadless
+Arg[0]: /usr/lib/virtualbox/VBoxHeadless
+Arg[1]: --comment
+Arg[2]: centos7_default_1661951727528_81376
+Arg[3]: --startvm
+Arg[4]: 13bac126-667b-45da-9613-efec4c00a3ea
+Arg[5]: --vrde
+Arg[6]: config
+AddRef: illegal refcnt=3221225469 state=2
