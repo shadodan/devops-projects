@@ -17,7 +17,7 @@ Meu portfólio DevOps, consiste em um repositório que é gerenciado pelo Git, o
 - [Tabela de Conteudo](#tabela-de-conteudo)
   - [Branches](#branches)
     - [Introdução VMs](#introdução-vms)
-    - [Setup Local](#setup-local)
+    - [Setup Local](#vprofile-em-vm)
   - [Tecnologias](#tecnologias)
 
 ## Branches
@@ -43,7 +43,7 @@ administração de sistemas
 - website - Máquina virtual com serviço de httpd servindo uma página estática
 - wordpress - Máquina virtual com wordpress instalado e configurado
 
-### Setup Local
+### VProfile em VM
 
 ![Diagrama das Máquinas Virtuais](./imgs/vprofile-application-diagram.png)
 
@@ -56,7 +56,7 @@ versões, uma sendo feita de forma manual e outra que é com IaaC
 
 #### Pastas
 
-- automated-provisioning - Vagrantfile único sendo provisionado usando scripts em bash
+- automated-provisioning - Vagrantfile único sendo provisionado usando scripts em shell
 - manual-provisioning - Vagrantfile único servindo todos serviços de forma manual
 
 ## Tecnologias
