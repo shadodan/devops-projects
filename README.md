@@ -16,7 +16,7 @@ Meu portfólio DevOps, consiste em um repositório que é gerenciado pelo Git, o
 
 - [Tabela de Conteudo](#tabela-de-conteudo)
   - [Branches](#branches)
-    - [Introdução às máquinas virtuais](#introducao-vms)
+    - [Introdução VMs](#introdução-vms)
     - [Setup Local](#setup-local)
   - [Tecnologias](#tecnologias)
 
@@ -42,6 +42,22 @@ administração de sistemas
 - ubuntu18 - Máquina virtual simples
 - website - Máquina virtual com serviço de httpd servindo uma página estática
 - wordpress - Máquina virtual com wordpress instalado e configurado
+
+### Setup Local
+
+![Diagrama das Máquinas Virtuais](./imgs/vprofile-application-diagram.png)
+
+Nesta branch está hospedado um sistema feito utilizando Spring Boot que se utiliza de uma arquitetura que possui
+cinco serviços principais, sendo eles Nginx para balanceamento de carga, uma aplicação em Java que é hospedada
+no servidor Tomcat, serviço de mensageria com o RabbitMQ, serviço de cache utilizando o Memchached e banco
+de dados utilizando o MySQL.
+Para atender todas essas necessidades foram criadas 5 máquinas virtuais, todas num arquivo Vagrantfile e com duas
+versões, uma sendo feita de forma manual e outra que é com IaaC
+
+#### Pastas
+
+- automated-provisioning - Vagrantfile único sendo provisionado usando scripts em bash
+- manual-provisioning - Vagrantfile único servindo todos serviços de forma manual
 
 ## Tecnologias
 
