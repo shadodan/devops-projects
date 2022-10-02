@@ -18,6 +18,7 @@ Meu portfólio DevOps, consiste em um repositório que é gerenciado pelo Git, o
   - [Branches](#branches)
     - [Introdução VMs](#introdução-vms)
     - [Setup Local](#vprofile-em-vm)
+    - [Introdução Containers](#introdução-containers)
   - [Tecnologias](#tecnologias)
 
 ## Branches
@@ -34,14 +35,22 @@ administração de sistemas
 #### Pastas
 
 - IaaC - VMs utilizando IaaC com scripts bash
-  - website - Website estático hospedado usando apache httpd com script para automatizar o deploy
-  - wordpress - Site feito em wordpress usando script para automatizar o deploy
-- centos7 - Máquina virtual simples
-- data - Pasta compartilhada entre algumas VMs
-- multi-vm - Vagrantfile utilizando múltiplas VMs
-- ubuntu18 - Máquina virtual simples
-- website - Máquina virtual com serviço de httpd servindo uma página estática
-- wordpress - Máquina virtual com wordpress instalado e configurado
+  - website
+    - Website estático hospedado usando apache httpd com script para automatizar o deploy
+  - wordpress
+    - Site feito em wordpress usando script para automatizar o deploy
+- centos7
+  - Máquina virtual simples
+- data
+  - Pasta compartilhada entre algumas VMs
+- multi-vm
+  - Vagrantfile utilizando múltiplas VMs
+- ubuntu18
+  - Máquina virtual simples
+- website
+  - Máquina virtual com serviço de httpd servindo uma página estática
+- wordpress
+  - Máquina virtual com wordpress instalado e configurado
 
 ### VProfile em VM
 
@@ -56,8 +65,28 @@ versões, uma sendo feita de forma manual e outra que é com IaaC
 
 #### Pastas
 
-- automated-provisioning - Vagrantfile único sendo provisionado usando scripts em shell
-- manual-provisioning - Vagrantfile único servindo todos serviços de forma manual
+- automated-provisioning
+  - Vagrantfile único sendo provisionado usando scripts em shell
+- manual-provisioning
+  - Vagrantfile único servindo todos serviços de forma manual
+
+### Introdução Containers
+
+Nesta branch está hospedada três pastas, todas utilizando o Docker como ferramenta para se fazer o deploy de uma
+aplicação, juntamente a uma máquina virtual, além da aplicação prática de microsserviços com uma aplicação inteira rodando no Docker
+
+#### Pastas
+
+- basics
+  - VM com website estático rodando no servidor Apache
+- microservices
+  - VM que possui uma aplicação divida em microsserviços, sendo eles:
+    - Frontend com Angular
+    - API em Java para gerenciamento de produtos específicos
+    - API em NodeJs para gerenciamento de usuários e dados gerais
+    - Nginx servindo como API Gateway
+- vprofile-containers
+  - VM Configurada para ser exatamente o mesmo que o projeto anterior mas rodando em containers
 
 ## Tecnologias
 
