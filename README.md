@@ -72,6 +72,8 @@ versões, uma sendo feita de forma manual e outra que é com IaaC
 
 ### Introdução Containers
 
+![Docker Logo](./imgs/docker.png)
+
 Nesta branch está hospedada três pastas, todas utilizando o Docker como ferramenta para se fazer o deploy de uma
 aplicação, juntamente a uma máquina virtual, além da aplicação prática de microsserviços com uma aplicação inteira rodando no Docker
 
