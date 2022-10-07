@@ -19,6 +19,7 @@ Meu portfólio DevOps, consiste em um repositório que é gerenciado pelo Git, o
     - [Introdução VMs](#introdução-vms)
     - [Setup Local](#vprofile-em-vm)
     - [Introdução Containers](#introdução-containers)
+    - [Bash Scripts](#bash-scripts)
   - [Tecnologias](#tecnologias)
 
 ## Branches
@@ -90,6 +91,35 @@ aplicação, juntamente a uma máquina virtual, além da aplicação prática de
 - vprofile-containers
   - VM Configurada para ser exatamente o mesmo que o projeto anterior mas rodando em containers
 
+### Bash Scripts
+
+![Bash](./imgs/bash-script.png)
+
+Nesta branch estão hospedados scripts, onde possuem diversos conceitos de lógica de programação e serviços de
+automação usando o interpretador Bash
+
+#### Scripts
+
+- 1_firstscript.sh
+- 2_websetup.sh
+- 3_vars_websetup.sh
+- 4_dismantle_websetup
+- 5_args_websetup.sh
+- 6_system_status.sh
+- 7_testvars.sh
+- 8_user_input.sh
+- 9_conditionals.sh
+- 10_conditionals.sh
+- 11_conditionals.sh
+- 12_monit.sh
+- 13_monit.sh
+- 14_for_loop.sh
+- 15_for_loop.sh
+- 16_while_loop.sh
+- 17_while_loop.sh
+- 18_multios_websetup.sh
+- 19_webdeploy.sh
+
 ## Tecnologias
 
 As seguintes ferramentas e conceitos foram usados na construção do projeto:
@@ -97,6 +127,8 @@ As seguintes ferramentas e conceitos foram usados na construção do projeto:
 - [Vagrant](https://www.vagrantup.com/)
 - [Ubuntu18](https://ubuntu.com/)
 - [Centos7](https://www.centos.org/)
+- [Docker](https://www.docker.com/)
+- [Bash](https://www.gnu.org/software/bash/)
 
 ### Autor
 
