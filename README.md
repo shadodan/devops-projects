@@ -101,24 +101,45 @@ automação usando o interpretador Bash
 #### Scripts
 
 - 1_firstscript.sh
+  - Um script básico de hello world
 - 2_websetup.sh
+  - Script básico para automatizar o setup de um site no serviço de httpd
 - 3_vars_websetup.sh
+  - O mesmo script anterior mas com variáveis
 - 4_dismantle_websetup
+  - Script para remoção de todo o setup feito
 - 5_args_websetup.sh
+  - O mesmo script utilizando argumentos do terminal
 - 6_system_status.sh
+  - Script para ver o estado do sistema
 - 7_testvars.sh
+  - Script utilizado para se entender o conceito de parentesco e variáveis globais
 - 8_user_input.sh
+  - Script recebendo dados do usuário em tempo de execução
 - 9_conditionals.sh
+  - Script utilizando estrutura if simples
 - 10_conditionals.sh
+  - Script utilizando estrutura if-else
 - 11_conditionals.sh
+  - Script utilizando estrutura de if-else encadeado
 - 12_monit.sh
+  - Script para monitorar se o serviço de httpd está rodando
 - 13_monit.sh
+  - O mesmo script mas usando uma condicional diferente
 - 14_for_loop.sh
+  - Script usando loop básico com for
 - 15_for_loop.sh
+  - Script para automatizar a criação de usuários
 - 16_while_loop.sh
+  - Script básico usando while loop
 - 17_while_loop.sh
-- 18_multios_websetup.sh
-- 19_webdeploy.sh
+  - O mesmo script mas infinito
+- remote-web-setup
+  - Pasta onde possui scripts para se rodar em outras máquinas via ssh, com configuração anterior entre elas
+  - 18_multios_websetup.sh
+    - Script para automatizar o webdeploy, mas agora para suporte às distribuições Linux baseadas Debian
+  - 19_webdeploy.sh
+    - Script para se mandar o script anterior e rodar ele na máquina via ssh
 
 ## Tecnologias
 
