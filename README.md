@@ -20,6 +20,7 @@ Meu portfólio DevOps, consiste em um repositório que é gerenciado pelo Git, o
     - [Setup Local](#vprofile-em-vm)
     - [Introdução Containers](#introdução-containers)
     - [Bash Scripts](#bash-scripts)
+    - [AWS-Intro](#aws-intro)
   - [Tecnologias](#tecnologias)
 
 ## Branches
@@ -134,12 +135,34 @@ automação usando o interpretador Bash
   - Script básico usando while loop
 - 17_while_loop.sh
   - O mesmo script mas infinito
-- remote-web-setup
+- remote-web-setup/
   - Pasta onde possui scripts para se rodar em outras máquinas via ssh, com configuração anterior entre elas
   - 18_multios_websetup.sh
     - Script para automatizar o webdeploy, mas agora para suporte às distribuições Linux baseadas Debian
   - 19_webdeploy.sh
     - Script para se mandar o script anterior e rodar ele na máquina via ssh
+
+### AWS-Intro
+
+Nesta branch foi aperndido os conceitos de diversos serviços da AWS, basicamente aplicando todo o conhecimento
+do curso até o momento no serviço de cloud
+
+#### Ferramentas aprendidas
+
+- EC2
+  - Serviço de máquinas virtuais da AWS
+- EBS
+  - Serviço de partições e armazenamento virtual da AWS
+- ELB
+  - Serviço de balanceamento de carga da AWS
+- Cloudwatch
+  - Serviço de monitoramento e gatilhos da AWS
+- EFS
+  - Serviço de sistema de arquivos compartilhados entre Instâncias EC2 da AWS
+- S3
+  - Serviço de armazenamento de objetos da AWS
+- RDS
+  - Serviço de gerenciamento e configuração de bancos de dados da AWS
 
 ## Tecnologias
 
@@ -150,6 +173,7 @@ As seguintes ferramentas e conceitos foram usados na construção do projeto:
 - [Centos7](https://www.centos.org/)
 - [Docker](https://www.docker.com/)
 - [Bash](https://www.gnu.org/software/bash/)
+- [AWS](https://www.aws.amazon.com/)
 
 ### Autor
 
