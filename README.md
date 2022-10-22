@@ -17,10 +17,11 @@ Meu portfólio DevOps, consiste em um repositório que é gerenciado pelo Git, o
 - [Tabela de Conteudo](#tabela-de-conteudo)
   - [Branches](#branches)
     - [Introdução VMs](#introdução-vms)
-    - [Setup Local](#vprofile-em-vm)
+    - [VProfile em VM](#vprofile-em-vm)
     - [Introdução Containers](#introdução-containers)
     - [Bash Scripts](#bash-scripts)
     - [AWS-Intro](#aws-intro)
+    - [VProfile em AWS](#vprofile-em-aws)
   - [Tecnologias](#tecnologias)
 
 ## Branches
@@ -144,6 +145,8 @@ automação usando o interpretador Bash
 
 ### AWS-Intro
 
+![AWS](./imgs/aws-logo.png)
+
 Nesta branch foi aperndido os conceitos de diversos serviços da AWS, basicamente aplicando todo o conhecimento
 do curso até o momento no serviço de cloud
 
@@ -163,6 +166,26 @@ do curso até o momento no serviço de cloud
   - Serviço de armazenamento de objetos da AWS
 - RDS
   - Serviço de gerenciamento e configuração de bancos de dados da AWS
+
+### VProfile em AWS
+
+![OnPremise-Cloud](./imgs/on-premise-to-aws.png)
+
+Esse projeto não possui uma branch própria, visto que ele é a mesma aplicação feita na [VProfile em VM]
+(#vprofile-em-vm), e tendo o diferencial de ser totalmente escalável e feita com uma arquitetura para cloud
+
+#### Passos do setup
+
+1. Criação dos pares de segurança
+2. Criação dos grupos de segurança
+3. Lançar instâncias utilizando user data (Bash Scrripts)
+4. Atualizar o IP para o mapeamento de nomes no serviço de Route 53
+5. Buildar aplicação a partir do código fonte
+6. Fazer o upload para um bucket S3
+7. Baixar o artefato para a instância EC2 do Tomcat
+8. Configurar ELB com HTTPS
+9. Mapear o endpoint para um nome do website no Godaddy DNS
+10. Configurar gatilhos para o escalonamento automático para instâncias Tomcat
 
 ## Tecnologias
 
