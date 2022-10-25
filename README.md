@@ -22,6 +22,7 @@ Meu portfólio DevOps, consiste em um repositório que é gerenciado pelo Git, o
     - [Bash Scripts](#bash-scripts)
     - [AWS-Intro](#aws-intro)
     - [VProfile em AWS](#vprofile-em-aws)
+    - [Refactor Vprofile AWS](#refactor-vprofile-aws)
   - [Tecnologias](#tecnologias)
 
 ## Branches
@@ -187,6 +188,35 @@ Esse projeto não possui uma branch própria, visto que ele é a mesma aplicaç�
 9. Mapear o endpoint para um nome do website no Godaddy DNS
 10. Configurar gatilhos para o escalonamento automático para instâncias Tomcat
 
+### Refactor Vprofile AWS
+
+![Amazon-Beanstalk](./imgs/aws-beanstalk.jpg)
+
+Este projeto consiste em refatorar o trabalho do projeto anterior utilizando os serviços próprios da AWS,
+sendo a principal mudança a utilização de máquinas virtuais para os serviços de banco de dados, RabbitMQ e Memchached
+para RDS, ActiveMQ and Elasticache
+
+#### Passos do setup
+
+1. Criar par de segurança para o Beanstalk
+2. Criar grupo de segurança para Elasticache, ActiveMQ e RDS
+3. Criar:
+
+- RDS
+- Elasticache
+- ActiveMQ
+
+4. Criar ambiente do Beanstalk
+5. Atualizar o grupo de segurança do backend para permitir o Beanstalk
+6. Atualizar o grupo de segurança do backend para permitir tráfego interno
+7. Inicializar banco de dados
+8. Fazer configuração de health check para o Beanstalk
+9. Adicionar o listener HTTPS para o ELB
+10. Buildar aplicação com as variáveis do backend
+11. Fazer deploy da aplicação no Beanstalk
+12. Criar CDN usando o Cloudfront e certificado SSL
+13. Atualizar o domínio no Godaddy
+
 ## Tecnologias
 
 As seguintes ferramentas e conceitos foram usados na construção do projeto:
@@ -196,7 +226,16 @@ As seguintes ferramentas e conceitos foram usados na construção do projeto:
 - [Centos7](https://www.centos.org/)
 - [Docker](https://www.docker.com/)
 - [Bash](https://www.gnu.org/software/bash/)
-- [AWS](https://www.aws.amazon.com/)
+- [AWS-EC2](https://aws.amazon.com/pt/ec2/)
+- [AWS-EBS](https://aws.amazon.com/pt/ebs/)
+- [AWS-ELB](https://aws.amazon.com/pt/elasticloadbalancing/)
+- [AWS-Cloudwatch](https://aws.amazon.com/pt/cloudwatch)
+- [AWS-EFS](https://aws.amazon.com/pt/efs/)
+- [AWS-S3](https://aws.amazon.com/pt/s3)
+- [AWS-RDS](https://aws.amazon.com/pt/rds)
+- [AWS-Route 53](https://aws.amazon.com/pt/route53/)
+- [AWS-Beanstalk](https://aws.amazon.com/pt/elasticbeanstalk/)
+- [AWS-Cloudfront](https://aws.amazon.com/pt/cloudfront/)
 
 ### Autor
 
