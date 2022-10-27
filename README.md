@@ -23,6 +23,7 @@ Meu portfólio DevOps, consiste em um repositório que é gerenciado pelo Git, o
     - [AWS-Intro](#aws-intro)
     - [VProfile em AWS](#vprofile-em-aws)
     - [Refactor Vprofile AWS](#refactor-vprofile-aws)
+    - [Revisão Git](#git-review)
   - [Tecnologias](#tecnologias)
 
 ## Branches
@@ -193,8 +194,8 @@ Esse projeto não possui uma branch própria, visto que ele é a mesma aplicaç�
 ![Amazon-Beanstalk](./imgs/aws-beanstalk.jpg)
 
 Este projeto consiste em refatorar o trabalho do projeto anterior utilizando os serviços próprios da AWS,
-sendo a principal mudança a utilização de máquinas virtuais para os serviços de banco de dados, RabbitMQ e Memchached
-para RDS, ActiveMQ and Elasticache
+sendo a principal mudança a utilização de máquinas virtuais para os serviços de banco de dados, RabbitMQ
+e Memchached para RDS, ActiveMQ and Elasticache
 
 #### Passos do setup
 
@@ -217,6 +218,47 @@ para RDS, ActiveMQ and Elasticache
 12. Criar CDN usando o Cloudfront e certificado SSL
 13. Atualizar o domínio no Godaddy
 
+### Git Review
+
+![Git](./imgs/git-and-git-bash.png)
+
+uma breve revisão do git e seus comandos para se gerenciar repositórios de forma eficiente, necessário
+para se ter uma boa integração entre as diversas equipes gerenciando o mesmo código e para se fazer deploys
+automatizados
+
+#### Comandos
+
+- git clone
+  - Comando para se clonar um repositório já existente na nuvem
+- git fetch
+  - Comando para se obter as informações que foram commitadas em um repositório
+- git switch
+  - Comando para se alterar e gerenciar branchs
+- git restore
+  - Comando para se alterar e restaurar versões de arquivos e diretórios
+- git add
+  - Comando para adicionar arquivos na área de staging
+- git commit
+  - Comando para se criar efetivamente arquivos para ao repositório local
+- git push
+  - Comando para enviar os dados do repositório local para a nuvem
+- git pull
+  - Comando para se pegar as alterações do repositório em nuvem e aplicar no repositório local
+- git merge
+  - Comando para se juntar diferentes trabalhos realizados em uma branch, ou aplicar as informações obtidas no git fetch
+- git status
+  - Comando para se verificar o status do repositório
+- git diff
+  - Comando para se mostrar o que foi alterado antes de ir para o stage (ou na área de staging com a flag --cached)
+- git show
+  - Comando para se mostrar todas as alterações feitas em um commit
+- git log
+  - Comando para se ver os dados dos últimos commits
+- git revert
+  - Comando para reverter um determinado commit, criando um novo que é um log do que foi feito
+- git reset
+  - Comando para se voltar a uma versão de forma forçada, podendo ser usado para reverter commits sem salvar esse registro
+
 ## Tecnologias
 
 As seguintes ferramentas e conceitos foram usados na construção do projeto:
@@ -236,6 +278,7 @@ As seguintes ferramentas e conceitos foram usados na construção do projeto:
 - [AWS-Route 53](https://aws.amazon.com/pt/route53/)
 - [AWS-Beanstalk](https://aws.amazon.com/pt/elasticbeanstalk/)
 - [AWS-Cloudfront](https://aws.amazon.com/pt/cloudfront/)
+- [Git](https://git-scm.com/)
 
 ### Autor
 
