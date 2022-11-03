@@ -222,7 +222,7 @@ e Memchached para RDS, ActiveMQ and Elasticache
 
 ![Git](./imgs/git-and-git-bash.png)
 
-uma breve revisão do git e seus comandos para se gerenciar repositórios de forma eficiente, necessário
+Uma breve revisão do git e seus comandos para se gerenciar repositórios de forma eficiente, necessário
 para se ter uma boa integração entre as diversas equipes gerenciando o mesmo código e para se fazer deploys
 automatizados
 
