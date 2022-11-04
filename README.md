@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Meu portfólio DevOps, consiste em um repositório que é gerenciado pelo Git, onde cada branch do projeto é equivalente a uma camada de estudos da área de DevOps, tendo neste projeto o seguinte:
+Meu portfólio DevOps, consiste em um repositório onde cada pasta do projeto é equivalente a uma camada de estudos da área de DevOps, tendo neste projeto o seguinte:
 
 - Scripts em Python e Bash
 - Virtualização utilizando Vagrant
