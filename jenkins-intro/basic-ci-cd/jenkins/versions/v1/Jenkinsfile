@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    tools {
+        maven "Maven3"
+        jdk "OracleJDK8"
+    }
+
+    stages {
+        stage('Fetch code from git') {
+            steps {
+                git branch: 'vp-rem', url: 'https://github.com/devopshydclub/vprofile-project.git'
+            }
+        }
+
+        stage('Building project') {
+            steps {
+                sh 'mvn install -DskipTests'
+            }
+
+            post {
+                success {
+                    echo 'Now archiving artifact...'
+                    archiveArtifacts artifacts: '**/*.war'
+                }
+            }
+        }
+
+        stage('Testing project') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+    }
+}
