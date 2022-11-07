@@ -24,6 +24,7 @@ Meu portfólio DevOps, consiste em um repositório onde cada pasta do projeto é
     - [VProfile em AWS](#vprofile-em-aws)
     - [Refactor Vprofile AWS](#refactor-vprofile-aws)
     - [Revisão Git](#git-review)
+    - [Jenkins](#jenkins-intro)
   - [Tecnologias](#tecnologias)
 
 ## Branches
@@ -259,6 +260,22 @@ automatizados
 - git reset
   - Comando para se voltar a uma versão de forma forçada, podendo ser usado para reverter commits sem salvar esse registro
 
+### Jenkins Intro
+
+![Jenkins Logo](./imgs/jenkins.png)
+
+Introdução ao Jenkins e CI/CD no geral, como configurar jobs e o automatizando o máximo de processos possíveis,
+tendo casos de uso onde foi necessária a integração com os serviços da AWS, assim tendo a solução em nuvem também
+
+#### Pastas
+
+- basic-ci-cd
+  - Primeiras versões do Pipeline e fluxo geral da aplicação, sendo configurado ao longo das versões um fluxo de CI/CD para uma aplicação escrita em Java, onde era submetida a uma análise de código pelo SonarQube e por fim era salvo uma cópia do artefato gerado no repositório Nexus
+- build-triggers
+  - Criados gatilhos onde ativavam o fluxo programado pelo Jenkinsfile, sendo ensinado o Github Webhook, Poll SCM, Build por CRON, Gatilhos Remotos e Build após o término de outra Build
+- docker-ci-cd
+  - Fluxo completo de CI/CD, onde é basicamente o mesmo fluxo do basic-ci-cd, porém ao invés de mandar para o repositório Nexus a nova imagem da aplicação é criada com base nas alterações e enviada para o ECR da AWS, e após o push da nova imagem é feito o deploy utilizando o serviço de ECS com Fargate
+
 ## Tecnologias
 
 As seguintes ferramentas e conceitos foram usados na construção do projeto:
@@ -278,7 +295,10 @@ As seguintes ferramentas e conceitos foram usados na construção do projeto:
 - [AWS-Route 53](https://aws.amazon.com/pt/route53/)
 - [AWS-Beanstalk](https://aws.amazon.com/pt/elasticbeanstalk/)
 - [AWS-Cloudfront](https://aws.amazon.com/pt/cloudfront/)
+- [AWS-ECR](https://aws.amazon.com/pt/ecr/)
+- [AWS-ECS](https://aws.amazon.com/pt/ecs/)
 - [Git](https://git-scm.com/)
+- [Jenkins](https://www.jenkins.io/)
 
 ### Autor
 
