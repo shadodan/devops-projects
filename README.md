@@ -12,22 +12,20 @@ Meu portfólio DevOps, consiste em um repositório onde cada pasta do projeto é
 - IaaC com ferramentas como Ansible e Terraform
 - Diversas soluções da AWS, como EC2, S3, Cloudformation e etc.
 
-# Tabela de conteúdo
+## Tabela de conteúdo
 
 - [Tabela de Conteudo](#tabela-de-conteudo)
-  - [Branches](#branches)
-    - [Introdução VMs](#introdução-vms)
-    - [VProfile em VM](#vprofile-em-vm)
-    - [Introdução Containers](#introdução-containers)
-    - [Bash Scripts](#bash-scripts)
-    - [AWS-Intro](#aws-intro)
-    - [VProfile em AWS](#vprofile-em-aws)
-    - [Refactor Vprofile AWS](#refactor-vprofile-aws)
-    - [Revisão Git](#git-review)
-    - [Jenkins](#jenkins-intro)
-  - [Tecnologias](#tecnologias)
-
-## Branches
+  - [Introdução VMs](#introdução-vms)
+  - [VProfile em VM](#vprofile-em-vm)
+  - [Introdução Containers](#introdução-containers)
+  - [Bash Scripts](#bash-scripts)
+  - [AWS-Intro](#aws-intro)
+  - [VProfile em AWS](#vprofile-em-aws)
+  - [Refactor Vprofile AWS](#refactor-vprofile-aws)
+  - [Revisão Git](#git-review)
+  - [Jenkins](#jenkins-intro)
+  - [Docker](#docker)
+- [Tecnologias](#tecnologias)
 
 ### Introdução VMs
 
@@ -78,7 +76,7 @@ versões, uma sendo feita de forma manual e outra que é com IaaC
 
 ### Introdução Containers
 
-![Docker Logo](./imgs/docker.png)
+![Containers](./imgs/containers.png)
 
 Nesta branch está hospedada três pastas, todas utilizando o Docker como ferramenta para se fazer o deploy de uma
 aplicação, juntamente a uma máquina virtual, além da aplicação prática de microsserviços com uma aplicação inteira rodando no Docker
@@ -275,6 +273,78 @@ tendo casos de uso onde foi necessária a integração com os serviços da AWS, 
   - Criados gatilhos onde ativavam o fluxo programado pelo Jenkinsfile, sendo ensinado o Github Webhook, Poll SCM, Build por CRON, Gatilhos Remotos e Build após o término de outra Build
 - docker-ci-cd
   - Fluxo completo de CI/CD, onde é basicamente o mesmo fluxo do basic-ci-cd, porém ao invés de mandar para o repositório Nexus a nova imagem da aplicação é criada com base nas alterações e enviada para o ECR da AWS, e após o push da nova imagem é feito o deploy utilizando o serviço de ECS com Fargate
+
+### Docker
+
+![Docker Logo](./imgs/docker.png)
+
+Aprofundando os conhecimentos em Docker, aprendendo como é o funcionamento interno da ferramenta e também aprendendo os principais comandos
+e componentes para um bom Dockerfile
+
+#### Pastas
+
+- intro
+  - Simples Dockerfile que faz o deploy de uma página do [Tooplate](https://www.tooplate.com/) usando o serviço apache2 do Ubuntu
+- docker-compose
+  - Introdução ao docker-compose, apenas o tutorial usado na própria [documentação do Docker](https://docs.docker.com/compose/gettingstarted/)
+- multi-stage
+  - Simples Dockerfile usando duas etapas de build de imagem
+- vprofile-project
+  - Projeto usado em aulas anteriores, mas dessa vez realizando o deploy usando Dockerfile e docker-compose
+
+#### Comandos Principais
+
+- docker images
+  - Lista todas as imagens locais
+- docker run
+  - Comando para se criar um novo container
+- docker ps
+  - Lista todos containers rodando, caso passar a flag -a lista todos containers
+- docker exec
+  -> Executa comandos no container
+- docker start
+  - Inicializa containers
+- docker stop
+  - Para a execução de containers
+- docker restart
+  - Reinicia containers
+- docker rm
+  - Remove containers
+- docker rmi
+  - Remove imagens
+- docker inspect
+  - Detalhes ou da imagem ou do container especificado
+
+#### Principais Instruções Dockerfile
+
+- FROM
+  - Imagem base a qual vai ser importada
+- LABELS
+  - Adiciona metadados para a imagem
+- RUN
+  - Executa comandos em uma nova camada e os commita na imagem
+- ADD
+  - Adiciona arquivos podendo adicionar um link, ou arquivar/desarquivar um arquivo
+- COPY
+  - Adiciona arquivos totalmente do jeito que são para a imagem
+- CMD
+  - Roda os binários assim que a imagem for inicializada
+- ENTRYPOINT
+  - Permite configurar o container que rodará como executável (primeiro comando ao inicializar)
+- VOLUME
+  - Cria um volume ou bind mount e o marca como segurando volumes externos
+- EXPOSE
+  - Containers irão escutar na porta especificada neste comando no runtime
+- ENV
+  - Define uma variável de ambiente
+- USER
+  - Define o nome de usuário ou UID
+- WORKDIR
+  - Define o diretório de trabalho
+- ARG
+  - Define uma variável que pode ser passada no build-time
+- ONBUILD
+  - Adiciona à imagem um trigger para ser executado posteriormente
 
 ## Tecnologias
 
