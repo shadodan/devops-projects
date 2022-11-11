@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vproapp
+  labels:
+    app: vproapp
+spec:
+  containers:
+    - name: vproapp
+      image: matheusdr/vproapp
+      ports:
+        - name: vproapp-port
+          containerPort: 8080
