@@ -6,7 +6,7 @@ sudo apt-get install \
     ca-certificates \
     curl \
     gnupg \
-    lsb-release
+    lsb-release -y
 
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -18,10 +18,10 @@ echo \
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 sudo apt-get update
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 
 ## Installing Jenkins ##
-sudo apt install maven openjdk-11-jre
+sudo apt install maven openjdk-11-jre -y
 
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
   /usr/share/keyrings/jenkins-keyring.asc > /dev/null
@@ -31,4 +31,4 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
 
 sudo apt-get update
-sudo apt-get install jenkins
+sudo apt-get install jenkins -y
