@@ -20,7 +20,26 @@ sudo apt-get update
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 
+sudo usermod -a -G docker $(whoami)
+
+## Docker health check ##
+clear
+echo "Testing docker installation..."
+docker --help &> /dev/null
+
+if [ $? -eq 0 ]
+then
+  echo "Docker is installed and running"
+else
+  echo "Docker error (Code: $?)"
+  exit 1
+fi
+
+sleep 3
+
 ## Installing Jenkins ##
+clear
+
 sudo apt install maven openjdk-11-jre -y
 
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
