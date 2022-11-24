@@ -14,7 +14,7 @@ Meu portfólio DevOps, consiste em um repositório onde cada pasta do projeto é
 
 ## Tabela de conteúdo
 
-- [Tabela de Conteudo](#tabela-de-conteudo)
+- Tabela de Conteudo
   - [Introdução VMs](#introdução-vms)
   - [VProfile em VM](#vprofile-em-vm)
   - [Introdução Containers](#introdução-containers)
@@ -25,6 +25,7 @@ Meu portfólio DevOps, consiste em um repositório onde cada pasta do projeto é
   - [Revisão Git](#git-review)
   - [Jenkins](#jenkins-intro)
   - [Docker](#docker)
+  - [Python](#python)
 - [Tecnologias](#tecnologias)
 
 ### Introdução VMs
@@ -346,6 +347,21 @@ e componentes para um bom Dockerfile
 - ONBUILD
   - Adiciona à imagem um trigger para ser executado posteriormente
 
+### Python
+
+![Python Logo](./imgs/python.png)
+
+Introdução a linguagem Python e ensinado alguns conceitos básicos de automatização, onde pode se usar para fazer lógicas mais
+complexas caso necessário, sem utilizar o bash, porém também é de extrema importância entender o Python por conta do Ansible
+funcionar em cima do Python 2, e ser a ferramenta de automação mais usada para setups de servidores
+
+#### Pastas
+
+- basics
+  - Pasta onde está presente conceitos básicos da linguagem
+- infra
+  - Pasta com conteúdo para se rodar scripts e comandos em hosts remotos usando a biblioteca fabric
+
 ## Tecnologias
 
 As seguintes ferramentas e conceitos foram usados na construção do projeto:
@@ -369,6 +385,7 @@ As seguintes ferramentas e conceitos foram usados na construção do projeto:
 - [AWS-ECS](https://aws.amazon.com/pt/ecs/)
 - [Git](https://git-scm.com/)
 - [Jenkins](https://www.jenkins.io/)
+- [Python](https://www.python.org/)
 
 ### Autor
 
