@@ -1,0 +1,21 @@
+web01 ansible_host=172.31.23.137
+web02 ansible_host=172.31.17.193
+db01 ansible_host=172.31.19.79
+
+[websrvgrp]
+web01
+web02
+
+[dbsrvgrp]
+db01
+
+[dc_ohio:children]
+websrvgrp
+dbsrvgrp
+
+[dc_ohio:vars]
+ansible_user=vagrant
+ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
+
+# To have a more detailed information of tasks:
+#  ansible-playbook db_config.yaml -{1..4}v
