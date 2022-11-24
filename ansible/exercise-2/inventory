@@ -1,0 +1,26 @@
+web01 ansible_host=172.31.23.137
+web02 ansible_host=172.31.17.193
+db01 ansible_host=172.31.19.79
+
+[websrvgrp]
+web01
+web02
+
+[dbsrvgrp]
+db01
+
+[dc_ohio:children]
+websrvgrp
+dbsrvgrp
+
+[dc_ohio:vars]
+ansible_user=vagrant
+ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
+
+# Set /etc/ansible/ansible.cfg -> host_key_checking = False
+# To install a package in remote host:
+#  `ansible -i inventory -m yum -a "name=httpd state=present" host --become`
+# To start a service in remote host:
+#  `ansible -i inventory -m service -a "name=httpd state=started enabled=yes" host --become`
+# To copy a file in remote host:
+#  `ansible -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html" host --become`

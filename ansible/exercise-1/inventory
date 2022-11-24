@@ -1,0 +1,21 @@
+web01 ansible_host=172.31.23.137
+web02 ansible_host=172.31.17.193
+db01 ansible_host=172.31.19.79
+
+[websrvgrp]
+web01
+web02
+
+[dbsrvgrp]
+db01
+
+[dc_ohio:children]
+websrvgrp
+dbsrvgrp
+
+[dc_ohio:vars]
+ansible_user=vagrant
+ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
+
+# Set /etc/ansible/ansible.cfg -> host_key_checking = False
+# To check if is connected use in terminal `ansible -i inventory -m ping dc_ohio`
