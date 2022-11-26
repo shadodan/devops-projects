@@ -1,0 +1,2 @@
+USERNAME: dbuser
+COMMENT: value from host_vars/db01

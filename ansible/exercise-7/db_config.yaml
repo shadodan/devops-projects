@@ -1,0 +1,37 @@
+- name: Setup db server
+  hosts: dbsrvgrp
+  become: yes
+  tasks:
+    - debug:
+        var: db_name
+
+    - debug:
+        msg: "Value of db_user is {{ db_user }}"
+
+    - name: Install MariaDB server
+      yum:
+        name: mariadb-server
+        state: present
+
+    - name: Install Python Mysql server
+      yum:
+        name: MySQL-python
+        state: present
+
+    - name: Start and enable MariaDB
+      service:
+        name: mariadb-server
+        state: started
+        enabled: yes
+
+    - name: Create database accounts
+      mysql_db:
+        name: "{{ db_name }}"
+        state: present
+
+    - name: Create admin user
+      mysql_user:
+        name: "{{  db_user  }}"
+        password: "{{ db_pass }}"
+        priv: "*.*:ALL"
+        state: present

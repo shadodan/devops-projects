@@ -1,0 +1,18 @@
+- name: Understanding precedence of vars
+  hosts: all
+  become: yes
+  vars:
+    USERNAME: admin
+    COMMENT: Var from playbook
+  tasks:
+    - name: Create a user
+      user:
+        name: "{{ USERNAME }}"
+        comment: "{{ COMMENT }}"
+      register: USER_OUT
+
+    - debug:
+        var: USER_OUT.name
+
+    - debug:
+        var: USER_OUT.comment

@@ -1,0 +1,5 @@
+## Variables accessed by all the hosts from inventory file
+
+db_user: admin
+db_pass: admin123
+db_name: redhat

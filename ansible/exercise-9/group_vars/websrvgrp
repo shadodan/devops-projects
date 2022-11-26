@@ -1,0 +1,2 @@
+USERNAME: websrvuser
+COMMENT: value from group_vars/websrvgrp
