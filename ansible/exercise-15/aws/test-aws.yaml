@@ -1,0 +1,30 @@
+- hosts: localhost
+  gather_facts: no
+  vars:
+    region: us-east-1
+  tasks:
+    - name: Create key pair
+      ec2_key:
+        name: sample
+        region: "{{ region }}"
+      register: key_output
+
+    - name: Save key
+      copy:
+        content: "{{ key_output.key.private_key }}"
+        dest: ./sample.pem
+      when: key_output.changed
+
+    - name: Provision a EC2 instance
+      ec2:
+        key_name: sample
+        instance_type: t2.micro
+        image: ami-06eb89b14ac4f4029
+        count: 1
+        region: "{{ region }}"
+        instance_tags:
+          Name: db01
+          db: postgres
+        count_tag:
+          Name: db01
+          db: postgres

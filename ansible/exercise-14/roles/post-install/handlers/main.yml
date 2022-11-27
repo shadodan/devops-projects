@@ -1,0 +1,12 @@
+---
+- name: Restart NTP service in RedHat
+  service:
+    name: ntpd
+    state: restarted
+    enabled: yes
+
+- name: Restart NTP service in Debian
+  service:
+    name: ntp
+    state: restarted
+    enabled: yes

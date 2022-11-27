@@ -1,0 +1,99 @@
+- name: Provisioning server
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install NTP on CentOS
+      yum:
+        name: "{{ item }}"
+        state: present
+      when: ansible_distribution == "CentOS"
+      loop:
+        - ntp
+        - wget
+        - git
+        - zip
+        - unzip
+
+    - name: Install NTP in Ubuntu
+      apt:
+        name: "{{ item }}"
+        state: present
+        update_cache: yes # apt update
+      when: ansible_distribution == "Ubuntu"
+      loop:
+        - ntp
+        - wget
+        - git
+        - zip
+        - unzip
+
+    - name: Start NTP on RedHat
+      service:
+        name: ntpd
+        state: started
+        enabled: yes
+      when: ansible_os_family == "RedHat"
+
+    - name: Start NTP on Debian
+      service:
+        name: ntp
+        state: started
+        enabled: yes
+      when: ansible_os_family == "Debian"
+
+    - name: Add group
+      group:
+        name: devops
+        state: present
+
+    - name: Add Users
+      user:
+        name: "{{ item }}"
+        state: present
+        groups: devops
+      loop: " {{ usernames }}"
+
+    - name: Banner file
+      copy:
+        content: "This {{ ansible_os_family }} based OS is managed by Ansible.\n"
+        dest: /etc/motd
+
+    - name: Deploy NTP conf file for RedHat
+      template:
+        src: templates/example_redhat.conf.j2
+        dest: /etc/ntp.conf
+      when: ansible_os_family == "RedHat"
+      notify:
+        - Restart NTP service in RedHat
+
+    - name: Deploy NTP conf file for Debian
+      template:
+        src: templates/example_debian.conf.j2
+        dest: /etc/ntp.conf
+      when: ansible_os_family == "Debian"
+      notify:
+        - Restart NTP service in Debian
+
+    - name: Directory for dev data
+      file:
+        path: /opt/dev-data
+        state: directory
+        mode: 0775
+
+    - name: Copy dev.txt
+      copy:
+        src: files/dev.txt
+        dest: /opt/dev-data/dev.txt
+
+  handlers:
+    - name: Restart NTP service in RedHat
+      service:
+        name: ntpd
+        state: restarted
+        enabled: yes
+
+    - name: Restart NTP service in Debian
+      service:
+        name: ntp
+        state: restarted
+        enabled: yes

@@ -1,0 +1,10 @@
+---
+usernames:
+  - alpha
+  - beta
+  - gamma
+  - delta
+ntp0: 0.north-america.pool.ntp.org
+ntp1: 1.north-america.pool.ntp.org
+ntp2: 2.north-america.pool.ntp.org
+ntp3: 3.north-america.pool.ntp.org
