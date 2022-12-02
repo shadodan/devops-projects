@@ -362,6 +362,47 @@ funcionar em cima do Python 2, e ser a ferramenta de automação mais usada para
 - infra
   - Pasta com conteúdo para se rodar scripts e comandos em hosts remotos usando a biblioteca fabric
 
+### Ansible
+
+![Ansible Logo](./imgs/ansible.png)
+
+Introdução a ferramenta Ansible, aprendendo desde o seu mais básico módulo de ping para se testar a conexão ssh do host com
+a máquina a ser configurada, até uma configuração um pouco mais avançada com templates usando o Jinja e fazendo um serviço rodar
+utilizando roles para modularização de configurações.
+
+#### Pastas
+
+- exercise-1
+  - Apenas o arquivo de inventário com hosts estáticos
+- exercise-2
+  - Comandos ad-hoc para se copiar um arquivo local para remoto
+- exercise-3
+  - Primeiro playbook configurando servidor web e banco de dados
+- exercise-4
+  - Configuração mais avançada no banco e início de modularização
+- exercise-5
+  - Adicionando arquivo de configuração do Ansible
+- exercise-6
+  - Uso de variáveis nos playbooks
+- exercise-7
+  - Uso da pasta group_vars para variáveis de grupo
+- exercise-8
+  - Uso da pasta host_vars para variáveis de host
+- exercise-9
+  - Análise de variáveis do Ansible (Ansible facts)
+- exercise-10
+  - Provisionando serviço NTP em diferentes sistemas operacionais
+- exercise-11
+  - Loop de items no playbook
+- exercise-12
+  - Implementação de handlers junto com uma configuração mais avançada NTP
+- exercise-13
+  - Início do uso das roles do Ansible
+- exercise-14
+  - Uso de variáveis dentro do próprio playbook
+- exercise-15
+  - Provisionando ambiente na AWS usando Ansible
+
 ## Tecnologias
 
 As seguintes ferramentas e conceitos foram usados na construção do projeto:
@@ -383,9 +424,12 @@ As seguintes ferramentas e conceitos foram usados na construção do projeto:
 - [AWS-Cloudfront](https://aws.amazon.com/pt/cloudfront/)
 - [AWS-ECR](https://aws.amazon.com/pt/ecr/)
 - [AWS-ECS](https://aws.amazon.com/pt/ecs/)
+- [AWS-VPC](https://aws.amazon.com/pt/vpc/)
 - [Git](https://git-scm.com/)
+- [Maven](https://maven.apache.org/)
 - [Jenkins](https://www.jenkins.io/)
 - [Python](https://www.python.org/)
+- [Ansible](https://www.ansible.com/)
 
 ### Autor
 

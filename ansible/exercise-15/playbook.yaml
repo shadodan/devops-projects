@@ -1,6 +1,6 @@
 - name: Provisioning server
   hosts: all
-  become: yes
+  become: true
   roles:
     - role: geerlingguy.java
 
