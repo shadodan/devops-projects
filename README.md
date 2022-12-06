@@ -26,6 +26,8 @@ Meu portfólio DevOps, consiste em um repositório onde cada pasta do projeto é
   - [Jenkins](#jenkins-intro)
   - [Docker](#docker)
   - [Python](#python)
+  - [Ansible](#ansible)
+  - [CI/CD na aws](#ci-cd-aws)
 - [Tecnologias](#tecnologias)
 
 ### Introdução VMs
@@ -403,6 +405,14 @@ utilizando roles para modularização de configurações.
 - exercise-15
   - Provisionando ambiente na AWS usando Ansible
 
+### CI CD AWS
+
+![Fluxo CI/CD](./imgs/ci-cd.png)
+
+O projeto consiste em uma versão do vprofile que está com todos os seus serviços na aws, desde a hospedagem do repositório
+utilizando o Code Commit, assim como a própria camada de infraestrutura que está sendo realizada utilizando o Beanstalk com RDS,
+assim como seu fluxo CI/CD, que é realizado com o code build e code pipeline da própria AWS
+
 ## Tecnologias
 
 As seguintes ferramentas e conceitos foram usados na construção do projeto:
@@ -425,6 +435,8 @@ As seguintes ferramentas e conceitos foram usados na construção do projeto:
 - [AWS-ECR](https://aws.amazon.com/pt/ecr/)
 - [AWS-ECS](https://aws.amazon.com/pt/ecs/)
 - [AWS-VPC](https://aws.amazon.com/pt/vpc/)
+- [AWS-Code Build](https://aws.amazon.com/pt/codebuild/)
+- [AWS-Code Pipeline](https://aws.amazon.com/pt/codepipeline/)
 - [Git](https://git-scm.com/)
 - [Maven](https://maven.apache.org/)
 - [Jenkins](https://www.jenkins.io/)
