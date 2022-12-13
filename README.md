@@ -413,6 +413,28 @@ O projeto consiste em uma versão do vprofile que está com todos os seus servi�
 utilizando o Code Commit, assim como a própria camada de infraestrutura que está sendo realizada utilizando o Beanstalk com RDS,
 assim como seu fluxo CI/CD, que é realizado com o code build e code pipeline da própria AWS
 
+### Terraform
+
+![Terraform](./imgs/terraform.png)
+
+Introdução ao Terraform e a linguagem utilizada pelo mesmo para se fazer o provisionamento da infraestrutura utilizando a AWS
+tendo também boas práticas da linguagem
+
+#### Pastas
+
+- exercise-1
+  - Uma simples instância ec2 no terraform
+- exercise-2
+  - Uso de variáveis e de separação de arquivos
+- exercise-3
+  - A mesma criação da instância mas com chave ssh configurada no local junto com script para rodar
+- exercise-4
+  - Introdução aos outputs do terraform
+- exercise-5
+  - Utilização de um backend para o terraform, onde o estado da infraestrutura fica armazenado em um bucket s3
+- exercise-6
+  - Criação completa de uma instância ec2 junto com uma vpc e subnets
+
 ## Tecnologias
 
 As seguintes ferramentas e conceitos foram usados na construção do projeto:
