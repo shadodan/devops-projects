@@ -1,0 +1,13 @@
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0b7101e993ea27f3a
+      Tags:
+        - Key: "Name"
+          # Using the syntax ! function_name works in AWS Cloudformation
+          #Value: !Join
+          #  - " "
+          #  - - "My instance in"
+          #    - !Ref AWS::Region

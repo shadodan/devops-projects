@@ -1,0 +1,91 @@
+Parameters:
+  InstanceTypeParameter:
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.micro
+      - t2.small
+      - t2.medium
+    Description: Enter parameter for instance type
+  KeyNameParameter:
+    Type: AWS::EC2::KeyPair::KeyName
+    Description: Name of the login key
+Mappings: 
+  AmiRegionMap: 
+    us-east-1: 
+      AMI: "ami-0ff8a91507f77f867"
+    us-west-1: 
+      AMI: "ami-0bdb828fd58c52235"
+    eu-west-1: 
+      AMI: "ami-047bb4163c506cd98"
+    ap-southeast-1: 
+      AMI: "ami-08569b978cc4dfa10"
+    ap-northeast-1: 
+      AMI: "ami-06cd52961ce9f0d85"
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Metadata:
+      AWS::Cloudformation::Init:
+        config:
+          packages:
+            yum:
+              php: []
+              httpd: []
+              wget: []
+              unzip: []
+              git: []
+          commands:
+            fetch code: "wget https://www.tooplate.com/zip-templates/2119_gymso_fitness.zip && unzip 2119_gymso_fitness.zip && cp -r 2119_gymso_fitness/* /var/www/html"
+          files:
+            /var/www/html/hello.html:
+              content: !Sub |
+                <!DOCTYPE html>
+                <html lang="en">
+
+                <body>
+                  <h1>Welcome to Cloudformation</h1>
+                  <p>This site was deployed by Cloudformation</p>
+                </body>
+
+                </html>
+          services:
+            sysvinit:
+              httpd:
+                enabled: true
+                ensureRunning: true
+    Properties:
+      InstanceType: !Ref InstanceTypeParameter
+      KeyName: !Ref KeyNameParameter
+      ImageId: !FindInMap
+        - AmiRegionMap
+        - !Ref AWS::Region
+        - AMI
+      Tags:
+        - Key: "Name"
+          Value: "MyInstance"
+      SecurityGroups:
+        - !Ref MySecurityGroup
+      UserData:
+        'Fn::Base64':
+          !Sub |
+            #!/bin/bash -xe
+            yum install aws-cfn-bootstrap -y
+            /opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource WebServer --region ${AWS::Region}
+            /opt/aws/bin/cfn-signal -e $? --stack ${AWS::StackName} --resource WebServer --region ${AWS::Region
+  MySecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Description for group
+      VpcId:
+        ref: vpc-id
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrBlock: 0.0.0.0/0
+Outputs:
+  PrintSomeInfo:
+    Value: !GetAtt
+      - MyInstance
+      - PublicDnsName

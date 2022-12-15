@@ -28,6 +28,8 @@ Meu portfólio DevOps, consiste em um repositório onde cada pasta do projeto é
   - [Python](#python)
   - [Ansible](#ansible)
   - [CI/CD na aws](#ci-cd-aws)
+  - [Terraform](#terraform)
+  - [CloudFormation](#cloudformation)
 - [Tecnologias](#tecnologias)
 
 ### Introdução VMs
@@ -435,6 +437,35 @@ tendo também boas práticas da linguagem
 - exercise-6
   - Criação completa de uma instância ec2 junto com uma vpc e subnets
 
+### CloudFormation
+
+![CloudFormation](./imgs/cloudformation.png)
+
+Introdução ao CloudFormation da AWS, sendo uma ferramenta assim como o Terraform, ele possui a particularidade de ser exclusivo
+à AWS, além de possuir uma sintaxe totalmente estruturada em arquivos yml, sendo aprendido conceitos como as funções e componentes
+de cada template
+
+#### Pastas
+
+- exercise-1
+  - Simples arquivos de configuração para uma instância EC2
+- exercise-2
+  - Introdução a utilização de funções dentro dos templates
+- exercise-3
+  - Introdução ao conceito de change set dos templates
+- exercise-4
+  - Função Ref, utilizada para se fazer referências entre componentes
+- exercise-5
+  - Arquivo contento a configuração de uma instância EC2 assim como um grupo de segurança
+- exercise-6
+  - Introdução aos maps do cloudformation, com caso de uso para múltiplos ambientes ou regiões
+- exercise-7
+  - Introdução aos parâmetros dos templates
+- exercise-8
+  - Introdução aos outputs dos templates
+- exercise-9
+  - Utilização de metadados e user data para se fazer uma configuração de uma instância EC2
+
 ## Tecnologias
 
 As seguintes ferramentas e conceitos foram usados na construção do projeto:
@@ -459,11 +490,13 @@ As seguintes ferramentas e conceitos foram usados na construção do projeto:
 - [AWS-VPC](https://aws.amazon.com/pt/vpc/)
 - [AWS-Code Build](https://aws.amazon.com/pt/codebuild/)
 - [AWS-Code Pipeline](https://aws.amazon.com/pt/codepipeline/)
+- [AWS-CloudFormation](https://aws.amazon.com/pt/cloudformation/)
 - [Git](https://git-scm.com/)
 - [Maven](https://maven.apache.org/)
 - [Jenkins](https://www.jenkins.io/)
 - [Python](https://www.python.org/)
 - [Ansible](https://www.ansible.com/)
+- [Terraform](https://www.terraform.io/)
 
 ### Autor
 
